@@ -17,6 +17,8 @@ public class User {
   @Column
   private String name;
 
+  public User() {}
+
   public Integer getId() {
     return id;
   }

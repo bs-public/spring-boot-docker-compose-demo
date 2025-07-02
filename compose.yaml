@@ -3,10 +3,10 @@ services:
     image: 'mysql:8.4.5'
     container_name: mysql-8.4.5
     environment:
-      - 'MYSQL_DATABASE=my-db'
-      - 'MYSQL_PASSWORD=my-password'
-      - 'MYSQL_ROOT_PASSWORD=my-root-password'
-      - 'MYSQL_USER=my-user'
+      - 'MYSQL_DATABASE=my_db'
+      - 'MYSQL_PASSWORD=my_password'
+      - 'MYSQL_ROOT_PASSWORD=my_root_password'
+      - 'MYSQL_USER=my_user'
     ports:
       - '3306:3306'
     labels:
