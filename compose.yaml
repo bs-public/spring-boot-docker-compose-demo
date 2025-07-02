@@ -1,10 +1,18 @@
 services:
   mysql:
-    image: 'mysql:latest'
+    image: 'mysql:8.4.5'
+    container_name: mysql-8.4.5
     environment:
-      - 'MYSQL_DATABASE=mydatabase'
-      - 'MYSQL_PASSWORD=secret'
-      - 'MYSQL_ROOT_PASSWORD=verysecret'
-      - 'MYSQL_USER=myuser'
+      - 'MYSQL_DATABASE=my-db'
+      - 'MYSQL_PASSWORD=my-password'
+      - 'MYSQL_ROOT_PASSWORD=my-root-password'
+      - 'MYSQL_USER=my-user'
     ports:
-      - '3306'
+      - '3306:3306'
+    labels:
+        org.springframework.boot.jdbc.parameters: 'serverTimezone=UTC'
+    volumes:
+      - my_db_data:/var/lib/mysql
+volumes:
+  my_db_data:
+    name: my_db_vol
